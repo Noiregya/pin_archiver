@@ -6,7 +6,7 @@ const JSZip = require('jszip')
 const prefix = '.R'
 const https = require('https');
 const request = require('sync-request');
-const storagePath = '/var/www/html/storage/' //Where to save the zip files temporarily or forever if they're too big for Discord.
+const storagePath = '/var/www/html/' //Where to save the zip files temporarily or forever if they're too big for Discord.
 const DiscordMaxFileSize = 8388119 //Exact max file size allowed by discord for the bot.
 const domainName = 'http://gya.services/'//Domain name for the storage server. Only works if the storage server is also the bot server.
 const botHost = 'You can talk about your issue to Noiregya#1111 or by email noiregya@gmail.com.' //Contacts for the bot host in case an issue occurs to a user.
@@ -172,7 +172,7 @@ client.on('ready', function(){
           downloadAll(pinnedArray).then(function(zipFile){
             let stream = zipFile.generateNodeStream({type:"nodebuffer"})
             //---------------
-            var directory = storagePath+internalChannelID+"/"
+            var directory = storagePath+'storage/'+internalChannelID+"/"
             fs.mkdir(directory, { recursive: true }, (err) => {
               if (err && err.code!='EEXIST') {
                 throw(err)
