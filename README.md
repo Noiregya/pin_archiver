@@ -21,7 +21,7 @@ Open index.js with a text editor and set the values in the const declaration:
 * botHost -> a message for people encountering some kind of error (you can leave blank)  
 Create a file called "secret.config.yaml" and write  
 "---  
-token: replaceWithYourDiscordBotToken"   
+token: "replaceWithYourDiscordBotToken"   
 in it without quotes.  
 Save.  
 $ node index.js  
